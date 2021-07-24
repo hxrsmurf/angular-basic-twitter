@@ -12,13 +12,15 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { environment } from 'src/environments/environment';
 import { TimeService } from './time.service';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     NewTweetComponent,
-    TweetsComponent
+    TweetsComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

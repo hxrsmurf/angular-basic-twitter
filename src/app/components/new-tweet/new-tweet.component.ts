@@ -2,6 +2,7 @@ import { formatDate } from '@angular/common';
 import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/auth.service';
 import { TimeService } from 'src/app/time.service';
 import { Tweet } from 'src/app/Tweet';
 import { Tweets } from 'src/app/tweets';
@@ -19,7 +20,8 @@ export class NewTweetComponent implements OnInit {
   constructor(
     @Inject(LOCALE_ID) public locale: string,
     private afs: AngularFirestore,
-    private timeService: TimeService
+    private timeService: TimeService,
+    public auth: AuthService
 
   ) {
     this.itemsCollection = afs.collection<Tweet>('items');
@@ -43,8 +45,8 @@ export class NewTweetComponent implements OnInit {
     this.afs.collection('items').add(
       {
         profile: 'Photo',
-        displayName: 'Kevin Murphy',
-        username: '@hxrsmurf',
+        displayName: this.auth.userData.displayName,
+        email: this.auth.userData.email,
         time: this.timeService.myFunction(),
         tweet: this.textInput
       }

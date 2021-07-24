@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Tweet } from 'src/app/Tweet';
 import { Tweets } from 'src/app/tweets';
 import { map } from 'rxjs/operators'
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
   selector: 'app-tweets',
@@ -17,7 +18,10 @@ export class TweetsComponent implements OnInit {
   itemsCollection?: AngularFirestoreCollection<Tweet>;
   items?: Observable<Tweet[]>
 
-  constructor(private afs: AngularFirestore) {}
+  constructor(
+    private afs: AngularFirestore,
+    public auth: AuthService
+    ) {}
 
   ngOnInit(): void {
     this.itemsCollection = this.afs.collection<Tweet>('items', ref=> ref.orderBy('time','desc'));

@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="container">
+    <div class="container" *ngIf="auth.userData as user">
         <app-new-tweet></app-new-tweet>
 
         <!-- List Tweets -->
@@ -13,7 +13,6 @@
                     </svg>
                 </div>
                 <div class="col-4">{{item.displayName}}</div>
-                <div class="col">{{item.username}}</div>
                 <div class="col-3">{{item.time}}</div>
                 <div class="col-1">
                     <a href="#" (click)="onDelete(item.id)">...</a>
