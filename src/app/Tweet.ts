@@ -5,4 +5,6 @@ export class Tweet {
     email?: string;
     time?: string;
     tweet?: string
+    picture?: string;
+    photo?:string;
 }

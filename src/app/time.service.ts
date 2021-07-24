@@ -17,4 +17,10 @@ export class TimeService {
     const today = formatDate(todayString, 'HH:mm:ss dd-MM-yyyy', this.locale)
     return today
     }
+    
+    imageTime (){
+      const todayString = new Date().toISOString();
+      const today = formatDate(todayString, 'HHmmss-dd-MM-yyyy', this.locale)
+      return today
+      }
 }
