@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: rgb(21, 32, 43);
+    color: white        
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.card {
+    color: white;
+    background-color: rgb(21, 32, 43);
+    border-color: white;
+    border-width: .1em;
+}
