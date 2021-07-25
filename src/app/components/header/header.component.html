@@ -8,7 +8,7 @@
                     </div>
                     <div class="col">
                         <div class="formGroup">
-                            <button type="button" (click)="auth.SignOut()">
+                            <button type="button" class="btn btn-light" (click)="auth.SignOut()">
                                 Logout
                             </button>
                         </div>
@@ -19,8 +19,11 @@
                 <div class="row mb-3">
                     <div class="col">
                         <div class="formGroup">
-                            <button type="button" (click)="auth.GoogleAuth()">
-                                Login
+
+
+                            <button type="button" class="btn btn-light" (click)="auth.GoogleAuth()">
+                                <img src="../../../assets/google-logo.png" alt="" class="mr-2">
+                                Sign in with Google
                             </button>
                         </div>
                     </div>

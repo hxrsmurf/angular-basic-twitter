@@ -1,0 +1,27 @@
+.signin  {
+    max-width: 400px;
+    margin-top: 150px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    font-size: 2em;
+}
+
+.signin-header {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+form .signin-entry {
+    border: 0px solid black;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+form .signin-button {
+    padding-left: 16px;
+    padding-right: 16px;
+}
