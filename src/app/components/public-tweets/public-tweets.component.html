@@ -1,9 +1,9 @@
-<div class="container" *ngFor="let item of items | async">
-    <!-- List Tweets -->
+<!-- Display Public Tweets -->
+<div *ngFor="let item of items | async">
     <div class="card mt-3" *ngIf="item.public">
-        <div class="container" >
+        <div class="container">
             <div class="row row-cols-5 mt-2">
-                <div class="col-1 ml-4">
+                <div class="col-1 ml-4 mt-3">
 
                     <div *ngIf="item.profile; else elseBlock">
                         <img src="{{item.profile}}" alt="" width="80px" height="80px">
@@ -18,14 +18,16 @@
                         </svg>
                     </ng-template>
                 </div>
-                <div class="col-4">{{item.displayName}}</div>
-                <div class="col-3">{{item.time}}</div>
+                <div class="col-4 mt-3 container-fluid">{{item.displayName}}</div>
+                <div class="col-3 mt-3" style="text-overflow:ellipsis; overflow:hidden; white-space: nowrap">
+                    {{item.stringTime}}
+                </div>
             </div>
-            <div class="row ml-4">
+            <div class="row">
                 <div class="card-body">
                     {{item.tweet}}
                     <div *ngIf="item.picture">
-                        <img src="{{item.picture}}" alt="" width="400px" height="300px">
+                        <img src="{{item.picture}}" alt="" width="400px" height="300px" class="img-fluid">
                     </div>
                 </div>
 
@@ -33,3 +35,4 @@
         </div>
     </div>
 </div>
+<!-- Display Public Tweets -->

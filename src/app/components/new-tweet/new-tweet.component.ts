@@ -67,7 +67,6 @@ export class NewTweetComponent implements OnInit {
   }
 
   onClick() {
-
     if (!this.textInput) {
       return;
     }
@@ -80,20 +79,22 @@ export class NewTweetComponent implements OnInit {
       this.publicPost = false;
     }
 
-    console.log(this.publicPost)
-
     this.afs.collection('items').add(
       {
         profile: this.auth.userData.photoURL,
         displayName: this.auth.userData.displayName,
         email: this.auth.userData.email,
-        time: this.timeService.myFunction(),
+        time: this.timeService.realTime(),
+        stringTime: this.timeService.stringTime(),
         picture: this.downloadURL,
         tweet: this.textInput,
         public: this.publicPost
       }
     )
+
+    // Reset Variables
     this.textInput = '';
     this.showDownloadImage = false;
+    this.publicPost = false
   }
 }

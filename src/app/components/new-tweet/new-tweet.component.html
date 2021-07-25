@@ -21,16 +21,28 @@
         <!-- Tweet -->
         <div class="col">
             <form>
-                <input class="mt-2 mb-2 ml-2" type="text" id="textInput" placeholder="What's Happening?"
-                    [(ngModel)]="textInput" name="textInput" style="width: 400px;">
-                <div class="form-check">
-                    <div *ngIf="this.auth.userData.email == 'kvchmurphy@gmail.com'">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="publicPost"
-                            id="publicPost" [(ngModel)]="publicPost">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Public
-                        </label>
+                <div class="row row-cols-3">
+                    <div class="col">
+                        <input class="mt-2 mb-2 ml-2" type="text" id="textInput" placeholder="What's Happening?"
+                            [(ngModel)]="textInput" name="textInput" style="width: 200px;">
+
                     </div>
+
+                    <!-- Submit/Tweet -->
+                    <div class="col mt-2">
+                        <div class="form-check">
+                            <div *ngIf="this.auth.userData.email == 'kvchmurphy@gmail.com'">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                                    name="publicPost" id="publicPost" [(ngModel)]="publicPost">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Public
+                                </label>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-rounded mb-2 mr-1 tweet"
+                            (click)="onClick()">Tweet</button>
+                    </div>
+
                 </div>
             </form>
 
@@ -39,7 +51,7 @@
             </div>
 
             <!-- Picture -->
-            <div class="row row-cols-5">
+            <div class="row row-cols-5 mt-3 mb-3">
                 <div class="col">
                     <label for="file-upload">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -77,12 +89,6 @@
                         <path
                             d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
                     </svg>
-                </div>
-
-                <!-- Submit/Tweet -->
-                <div class="col">
-                    <button type="button" class="btn btn-primary btn-rounded mb-2 mr-1 tweet"
-                        (click)="onClick()">Tweet</button>
                 </div>
             </div>
         </div>
