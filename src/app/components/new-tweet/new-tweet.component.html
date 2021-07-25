@@ -23,6 +23,12 @@
             <form>
                 <input class="mt-2 mb-2 ml-2" type="text" id="textInput" placeholder="What's Happening?"
                     [(ngModel)]="textInput" name="textInput" style="width: 400px;">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="publicPost" id="publicPost" [(ngModel)]="publicPost">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Public
+                    </label>
+                </div>
             </form>
 
             <div *ngIf="downloadURL && showDownloadImage">

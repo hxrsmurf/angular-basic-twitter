@@ -41,6 +41,7 @@ export class NewTweetComponent implements OnInit {
   downloadURL?: any;
   photo: string = '';
   showDownloadImage?: boolean;
+  publicPost?: boolean;
 
   tweet = Tweets
 
@@ -72,10 +73,14 @@ export class NewTweetComponent implements OnInit {
     }
 
     if (!this.downloadURL) {
-      this.downloadURL = ''
+      this.downloadURL = '';
     }
 
-    console.log(this.auth.userData.photoURL)
+    if (!this.publicPost) {
+      this.publicPost = false;
+    }
+
+    console.log(this.publicPost)
 
     this.afs.collection('items').add(
       {
@@ -84,7 +89,8 @@ export class NewTweetComponent implements OnInit {
         email: this.auth.userData.email,
         time: this.timeService.myFunction(),
         picture: this.downloadURL,
-        tweet: this.textInput
+        tweet: this.textInput,
+        public: this.publicPost
       }
     )
     this.textInput = '';

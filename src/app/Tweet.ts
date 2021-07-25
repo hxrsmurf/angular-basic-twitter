@@ -7,4 +7,5 @@ export class Tweet {
     tweet?: string
     picture?: string;
     photo?:string;
+    public?: boolean;
 }

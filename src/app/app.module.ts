@@ -14,6 +14,8 @@ import { environment } from 'src/environments/environment';
 import { TimeService } from './time.service';
 import { HomeComponent } from './components/home/home.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { ProfileComponent } from './components/profile/profile.component';
+import { PublicTweetsComponent } from './components/public-tweets/public-tweets.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     NewTweetComponent,
     TweetsComponent,
     HomeComponent,
+    ProfileComponent,
+    PublicTweetsComponent,
   ],
   imports: [
     BrowserModule,

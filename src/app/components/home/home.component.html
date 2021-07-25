@@ -1,4 +1,7 @@
 <div class="col" align="center">
-    <app-header></app-header>
+    <app-header></app-header>    
     <app-tweets></app-tweets>
+    <div *ngIf="!auth.userData">
+        <app-public-tweets></app-public-tweets>
+    </div>
 </div>
