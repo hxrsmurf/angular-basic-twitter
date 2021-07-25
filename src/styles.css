@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    background-color: rgb(21, 32, 43);
+    background-color: #0f3e57 ;
     color: white;
 }
 
@@ -14,7 +14,7 @@ body {
 
 .card {
     color: white;
-    background-color: rgb(21, 32, 43);
+    background-color: #0f3e57 ;
     border-color: white;
     border-width: .1em;
 }
