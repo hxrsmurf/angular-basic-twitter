@@ -1,5 +1,7 @@
 import { formatDate } from '@angular/common';
 import { Component, Inject, Injectable, LOCALE_ID, OnInit } from '@angular/core';
+import * as firebase from 'firebase';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -12,15 +14,20 @@ export class TimeService {
   constructor(
     @Inject(LOCALE_ID) public locale: string) { }
 
-    myFunction (){
+  realTime() {
+    const realTime = firebase.default.firestore.Timestamp.now()
+    return realTime
+  }
+  
+  stringTime(){
     const todayString = new Date().toISOString();
-    const today = formatDate(todayString, 'HH:mm:ss dd-MM-yyyy', this.locale)
+    const stringTime = formatDate(todayString, 'HH:mm:ss dd-MM-yyyy', this.locale)
+    return stringTime
+  }
+
+  imageTime() {
+    const todayString = new Date().toISOString();
+    const today = formatDate(todayString, 'HHmmss-dd-MM-yyyy', this.locale)
     return today
-    }
-    
-    imageTime (){
-      const todayString = new Date().toISOString();
-      const today = formatDate(todayString, 'HHmmss-dd-MM-yyyy', this.locale)
-      return today
-      }
+  }
 }
