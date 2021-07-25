@@ -17,6 +17,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PublicTweetsComponent } from './components/public-tweets/public-tweets.component';
 import { SigninComponent } from './components/signin/signin.component';
+import { GetTweetsService } from './get-tweets.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { SigninComponent } from './components/signin/signin.component';
     AngularFireStorageModule
 
   ],
-  providers: [TimeService],
+  providers: [TimeService, GetTweetsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

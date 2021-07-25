@@ -1,7 +1,51 @@
+<div *ngIf="auth.userData as user">
+    
 <div class="container">
     <app-header></app-header>
+</div>
 
-    <div class="container" *ngIf="userInfo">
-        {{userInfo}}        
+<div class="container">
+    Your Pics
+    <div *ngFor="let item of pictures">
+        {{item}}
     </div>
 </div>
+<div style="border-color: purple; border-width: .3em; border-style: solid;">
+
+</div>
+<div class="container">
+
+    <h2>PROFILE</h2>
+
+    Your Tweets
+    <div class="container" style="border-style: solid; border-color: red;">
+        <div *ngFor="let item of message | async">
+            <div *ngIf="item.email == auth.userData.email">
+                <div class="row row-col-4">
+                    <div class="col">
+                        {{item.email}}
+                    </div>
+                    <div class="col">
+                        {{item.tweet}}
+                    </div>
+                    <div class="col">
+                        {{item.stringTime}}
+                    </div>
+                    <div class="col">
+                        <div *ngIf="this.auth.userData.email == 'kvchmurphy@gmail.com'">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                                name="publicPost" id="publicPost" [(ngModel)]="publicPost" (change)="click(item.id)">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Public
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="{{item.picture}}" alt="" width="400px" height="300px" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
